@@ -60,8 +60,10 @@ var func_loadTaskList = ()=>{
             obj_aTask = {aMoment:moment_temp, index:-1,hour:-1, hourStr:"-1am",text : "Nothing to do :("}
             
             // if there is cached data, load the cached data by overriding the default task.
-            if(arr_temp[index]) 
-                obj_aTask = arr_temp[index]
+            
+            
+            if(arr_temp != null) // check if nothing is cached in local storage 
+                obj_aTask = arr_temp[index] // if there is, load local storage value
 
             var int_tempHour = index // for the ith hour update its real hour
             obj_aTask.hour = int_tempHour;
